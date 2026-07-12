@@ -1,3 +1,7 @@
+output "site_recovery_fabrics_id" {
+  description = "Map of id values across all site_recovery_fabrics, keyed the same as var.site_recovery_fabrics"
+  value       = { for k, v in azurerm_site_recovery_fabric.site_recovery_fabrics : k => v.id }
+}
 output "site_recovery_fabrics_location" {
   description = "Map of location values across all site_recovery_fabrics, keyed the same as var.site_recovery_fabrics"
   value       = { for k, v in azurerm_site_recovery_fabric.site_recovery_fabrics : k => v.location }
